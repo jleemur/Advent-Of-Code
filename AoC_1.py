@@ -1,4 +1,7 @@
-# Author: JLeemur #
+###################
+# Author: JLeemur #####################
+# http://adventofcode.com/2016/day/1  #
+#######################################
 
 #Returns compass direction after turn
 def compass(direction, turn):
