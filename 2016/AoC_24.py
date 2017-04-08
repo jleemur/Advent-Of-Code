@@ -3,6 +3,8 @@
 # http://adventofcode.com/2016/day/24 #
 #######################################
 
+#look into itertools
+
 def main():
     grid = [] #input maze
     pos = [0,0] #current position
