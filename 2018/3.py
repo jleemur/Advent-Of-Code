@@ -2,6 +2,7 @@ import sys
 
 overlap = {}
 
+# part one: how many claims overlap
 def part_one(claims):
     count = 0
     for c in claims:
@@ -22,6 +23,7 @@ def part_one(claims):
 
 
 # part_one() needs to be executed first
+# part two: find claim id that doesn't overlap
 def part_two(claims):
     num = int(claims[len(claims)-1][0])  # total number of ids
     ids = [i for i in range(1, num+1)]
@@ -39,11 +41,9 @@ def part_two(claims):
     return ids[0]
 
 
-
-
+# input:
 # #1 @ 1,3: 4x5
 # id @ 1 right, 2 down: 4 wide, 5 tall
-# part one: how many indexes overlap
 if __name__ == '__main__':
     data = []
 
