@@ -5,4 +5,6 @@ http://adventofcode.com/
 
 2017: 3 problems finished
 
-2018: In progress
+2018: 4 problems finished
+
+2019: In progress
