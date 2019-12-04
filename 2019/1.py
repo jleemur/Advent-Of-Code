@@ -1,24 +1,31 @@
 import sys
+import math
 
-# sum of numbers
-def part_one(numbers):
-    return sum(numbers)
 
-# find first value to repeat
-def part_two(numbers):
-    # could improve by performing 1 iteration
-    # calculate shift (sum at end of iteration)
-    # finding the first value to repeat (using mod and shift)
-    numbers_seen = [0]
-    sum = 0
-    while True:
-        for number in numbers:
-            sum += number
-            if sum in numbers_seen:
-                return sum
-            numbers_seen.append(sum)
+def calculate_fuel(mass):
+    return math.floor(mass / 3) - 2
+
+
+def part_one(masses):
+    total_fuel_req = 0
+    for mass in masses:
+        total_fuel_req += calculate_fuel(mass)
+
+    return total_fuel_req
+
+
+def part_two(masses):
+    total_fuel_req = 0
+    for mass in masses:
+        fuel_req = mass  # init fuel_req > 0
+        while fuel_req > 0:
+            fuel_req = calculate_fuel(fuel_req)
+            total_fuel_req += fuel_req
+
+    return total_fuel_req
+
 
 if __name__ == '__main__':
     data = [int(l.strip()) for l in sys.stdin.readlines()]
-    print(part_one(data))
-    print(part_two(data))
+    print(f"1. {part_one(data)}")
+    print(f"2. {part_two(data)}")
